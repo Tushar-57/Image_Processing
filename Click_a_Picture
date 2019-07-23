@@ -1,0 +1,16 @@
+#!/bin/bash/python
+
+import cv2
+cap = cv2.VideoCapture(0) #Here we are using "0" which is indicating the device thorugh which program can access the webbcam.
+cap.read() #This will activate the webcam of the system(and you might also see the led turning on of the systems webcam).
+ret, photo = cap.read() #There are two variables, in which "ret" stores the boolean value if the photo has been clicked or not by the webcam. and the photo is saved in the variable, i.e. "photo".
+print(ret)  #if false the photo is not clicked, you can check if the webcam is connected to the system or not.
+
+#cv2.imwrite('filename.png', photo)  #This function can be used to write or store the clicked image in the system, and we also have to mention the variable in which the photo has been stored, i.e. "photo".
+
+#Or if we want to just see the picture, instead of saving it to the system, we can directly use "imshow" function in cv2 library.
+
+cv2.imshow('first', photo) # here "first" is the window title which is gonna pop up.
+cv2.waitKey() #this specifies how much time you want the window to be at the screen, by default it stops till you press any key.
+cv2.destroyAllWindows() #after you press any key all the windows will be destroyed.
+
